@@ -4,6 +4,12 @@ FROM python:3.9-slim
 # Set working directory
 WORKDIR /app
 
+# Create input and output directories for both rounds
+RUN mkdir -p /app/Round_1a/input \
+    /app/Round_1a/output \
+    /app/Round_1b/input \
+    /app/Round_1b/output \
+    /app/Round_1b/output_round1a
 # Install system dependencies for PyMuPDF and other requirements
 RUN apt-get update && apt-get install -y \
     build-essential \
